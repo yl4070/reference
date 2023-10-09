@@ -1,4 +1,41 @@
 
+@article{martin_implicit_2018,
+	title = {Implicit {Self}-{Regularization} in {Deep} {Neural} {Networks}: {Evidence} from {Random} {Matrix} {Theory} and {Implications} for {Learning}},
+	abstract = {Random Matrix Theory (RMT) is applied to analyze weight matrices of Deep Neural Networks (DNNs), including both production quality, pre-trained models such as AlexNet and Inception, and smaller models trained from scratch, such as LeNet5 and a miniature-AlexNet. Empirical and theoretical results clearly indicate that the DNN training process itself implicitly implements a form of Self-Regularization. The empirical spectral density (ESD) of DNN layer matrices displays signatures of traditionally-regularized statistical models, even in the absence of exogenously specifying traditional forms of explicit regularization. Building on relatively recent results in RMT, most notably its extension to Universality classes of Heavy-Tailed matrices, we develop a theory to identify 5+1 Phases of Training, corresponding to increasing amounts of Implicit Self-Regularization. These phases can be observed during the training process as well as in the final learned DNNs. For smaller and/or older DNNs, this Implicit Self-Regularization is like traditional Tikhonov regularization, in that there is a "size scale" separating signal from noise. For state-of-the-art DNNs, however, we identify a novel form of Heavy-Tailed Self-Regularization, similar to the self-organization seen in the statistical physics of disordered systems. This results from correlations arising at all size scales, which arises implicitly due to the training process itself. This implicit Self-Regularization can depend strongly on the many knobs of the training process. By exploiting the generalization gap phenomena, we demonstrate that we can cause a small model to exhibit all 5+1 phases of training simply by changing the batch size. This demonstrates that---all else being equal---DNN optimization with larger batch sizes leads to less-well implicitly-regularized models, and it provides an explanation for the generalization gap phenomena.},
+	journal = {arXiv: Learning},
+	author = {Martin, Charles H. and Mahoney, Michael W.},
+	month = oct,
+	year = {2018},
+	note = {MAG ID: 2895616758},
+}
+
+@article{nagarajan_uniform_2019,
+	title = {Uniform convergence may be unable to explain generalization in deep learning},
+	abstract = {Aimed at explaining the surprisingly good generalization behavior of overparameterized deep networks, recent works have developed a variety of generalization bounds for deep learning, all based on the fundamental learning-theoretic technique of uniform convergence. While it is well-known that many of these existing bounds are numerically large, through numerous experiments, we bring to light a more concerning aspect of these bounds: in practice, these bounds can \{{\textbackslash}em increase\} with the training dataset size. Guided by our observations, we then present examples of overparameterized linear classifiers and neural networks trained by gradient descent (GD) where uniform convergence provably cannot ``explain generalization'' -- even if we take into account the implicit bias of GD \{{\textbackslash}em to the fullest extent possible\}. More precisely, even if we consider only the set of classifiers output by GD, which have test errors less than some small \${\textbackslash}epsilon\$ in our settings, we show that applying (two-sided) uniform convergence on this set of classifiers will yield only a vacuous generalization guarantee larger than \$1-{\textbackslash}epsilon\$. Through these findings, we cast doubt on the power of uniform convergence-based generalization bounds to provide a complete picture of why overparameterized deep networks generalize well.},
+	journal = {arXiv: Learning},
+	author = {Nagarajan, Vaishnavh and Kolter, J. Zico},
+	month = feb,
+	year = {2019},
+	note = {ARXIV\_ID: 1902.04742
+MAG ID: 2914852400
+S2ID: 2b627185499791048681e8d24190c31dea928f16},
+}
+
+@article{martin_heavy-tailed_2019,
+	title = {Heavy-{Tailed} {Universality} {Predicts} {Trends} in {Test} {Accuracies} for {Very} {Large} {Pre}-{Trained} {Deep} {Neural} {Networks}},
+	doi = {10.1137/1.9781611976236.57},
+	abstract = {Given two or more Deep Neural Networks (DNNs) with the same or similar architectures, and trained on the same dataset, but trained with different solvers, parameters, hyper-parameters, regularization, etc., can we predict which DNN will have the best test accuracy, and can we do so without peeking at the test data? In this paper, we show how to use a new Theory of Heavy-Tailed Self-Regularization (HT-SR) to answer this. HT-SR suggests, among other things, that modern DNNs exhibit what we call Heavy-Tailed Mechanistic Universality (HT-MU), meaning that the correlations in the layer weight matrices can be fit to a power law (PL) with exponents that lie in common Universality classes from Heavy-Tailed Random Matrix Theory (HT-RMT). From this, we develop a Universal capacity control metric that is a weighted average of PL exponents. Rather than considering small toy NNs, we examine over 50 different, large-scale pre-trained DNNs, ranging over 15 different architectures, trained on ImagetNet, each of which has been reported to have different test accuracies. We show that this new capacity metric correlates very well with the reported test accuracies of these DNNs, looking across each architecture (VGG16/.../VGG19, ResNet10/.../ResNet152, etc.). We also show how to approximate the metric by the more familiar Product Norm capacity measure, as the average of the log Frobenius norm of the layer weight matrices. Our approach requires no changes to the underlying DNN or its loss function, it does not require us to train a model (although it could be used to monitor training), and it does not even require access to the ImageNet data.},
+	journal = {SDM},
+	author = {Martin, Charles H. and Mahoney, Michael W.},
+	month = jan,
+	year = {2019},
+	doi = {10.1137/1.9781611976236.57},
+	note = {ARXIV\_ID: 1901.08278
+MAG ID: 3030286842
+S2ID: 4490e8118cd97a74c0a79fb5a57cf6c9d8821704},
+	pages = {505--513},
+}
+
 @article{maennel_what_2020,
 	title = {What {Do} {Neural} {Networks} {Learn} {When} {Trained} {With} {Random} {Labels}},
 	volume = {33},
@@ -10,4 +47,33 @@
 MAG ID: 3100945695
 S2ID: 50d5e1d2cda879ee07a024d47b04d5f07b689575},
 	pages = {19693--19704},
+}
+
+@article{zhang_understanding_2021,
+	title = {Understanding deep learning (still) requires rethinking generalization},
+	volume = {64},
+	abstract = {Despite their massive size, successful deep artificial neural networks can
+exhibit a remarkably small difference between training and test performance.
+Conventional wisdom attributes small generalization error either to properties
+of the model family, or to the regularization techniques used during training.
+
+Through extensive systematic experiments, we show how these traditional
+approaches fail to explain why large neural networks generalize well in
+practice. Specifically, our experiments establish that state-of-the-art
+convolutional networks for image classification trained with stochastic
+gradient methods easily fit a random labeling of the training data. This
+phenomenon is qualitatively unaffected by explicit regularization, and occurs
+even if we replace the true images by completely unstructured random noise. We
+corroborate these experimental findings with a theoretical construction
+showing that simple depth two neural networks already have perfect finite
+sample expressivity as soon as the number of parameters exceeds the
+number of data points as it usually does in practice.
+
+We interpret our experimental findings by comparison with traditional models.},
+	number = {3},
+	author = {Zhang, Chiyuan and Bengio, Samy and Hardt, Moritz and Recht, Benjamin and Vinyals, Oriol},
+	month = feb,
+	year = {2021},
+	note = {MAG ID: 2566079294},
+	pages = {107--115},
 }
